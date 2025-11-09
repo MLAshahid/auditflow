@@ -1,0 +1,14 @@
+{
+  "finalUrl": "https://example.com/contact",
+  "audits": {
+    "largest-contentful-paint": {"id":"largest-contentful-paint","title":"Largest Contentful Paint","score":0.32,"numericValue":4800},
+    "cumulative-layout-shift":  {"id":"cumulative-layout-shift","title":"Cumulative Layout Shift","score":0.7,"numericValue":0.28},
+    "color-contrast":           {
+      "id":"color-contrast",
+      "title":"Elements have sufficient color contrast",
+      "score":0,
+      "details":{"items":[{"node":{"snippet":"<a class=\"btn\">Buy</a>"}}]}
+    },
+    "meta-description":         {"id":"meta-description","title":"Document has a meta description","score":0}
+  }
+}

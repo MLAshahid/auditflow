@@ -1,0 +1,5 @@
+Page,Critical,Medium,Low,Avg LCP,Avg CLS,Avg TTI
+https://getbootstrap.com/docs/5.1/getting-started/introduction/,1,1,0,3357.817,0.09714614745953791,5156.475124999999
+https://getbootstrap.com/docs/5.2/getting-started/introduction/,1,2,0,3601.132500000001,0.10710889562538817,6672.3305
+https://getbootstrap.com/docs/5.3/examples/,1,1,0,2700.9930000000004,0.08153253369420638,2716.4629000000004
+https://getbootstrap.com/docs/5.3/getting-started/introduction/,1,1,0,3019.653,0.09253700934110307,3102.1530000000002

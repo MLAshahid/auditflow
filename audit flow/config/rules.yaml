@@ -1,0 +1,16 @@
+﻿defaults: low
+rules:
+  largest-contentful-paint: {crit: ">=4000", med: ">=2500"}
+  cumulative-layout-shift:  {crit: ">=0.25", med: ">=0.10"}
+  is-on-https:              {crit: true}
+  uses-http2:               {med: true}
+  uses-text-compression:    {med: true}
+  render-blocking-resources: {med: true}
+  unminified-css:           {med: true}
+  unminified-javascript:    {med: true}
+  uses-passive-event-listeners: {med: true}
+  tap-targets:              {med: true}
+  image-alt:                {med: true}
+  color-contrast:           {crit: true}
+  meta-description:         {med: true}
+  document-title:           {med: true}
