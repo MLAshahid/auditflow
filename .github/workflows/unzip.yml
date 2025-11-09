@@ -1,0 +1,35 @@
+﻿name: Unzip ZIP into repo
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Unzip
+        shell: bash
+        run: |
+          set -e
+          ZIP="audit flow.zip"
+          if [ ! -f "$ZIP" ]; then
+            echo "ZIP not found: $ZIP"; exit 1
+          fi
+          tmpdir=$(mktemp -d)
+          unzip -o "$ZIP" -d "$tmpdir"
+          rm -rf "$tmpdir/.git" || true
+          shopt -s dotglob
+          mv -f "$tmpdir"/* .
+          rm -rf "$tmpdir"
+      - name: Commit extracted files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git rm -f "audit flow.zip" || true
+          git commit -m "Unzip archive into repo [skip ci]" || echo "No changes"
+          git push
